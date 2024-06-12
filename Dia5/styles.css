@@ -1,177 +1,104 @@
 body {
+    position: relative;
     font-family: "Poetsen One", sans-serif;
     margin: 0;
     padding: 0;
-    height: 2000px;
+    height: 100vh;
     background-color: #141414;
-    background-repeat: no-repeat;
-    box-shadow: inset 0px 70px 30px -30px#000000a2;
+    box-shadow: inset 0px 70px 30px -20px#00000086;
     display: flex;
     flex-direction: column;
-    padding-top: 10px;
-    padding-left: 56px;
-    position: relative;
-    overflow-x: hidden;
-    #background {
-        width: 100%;
-        height: 1070px;
-        position: absolute;
-        filter: brightness(95%);
-        z-index: -1;
-        mask-image: linear-gradient(to bottom, black 60%, transparent 93%);
-        top: 0;
-        left: 0;
-    }
-    #nav-bar {
-        display: flex;
-        column-gap: 44px;
-        align-items: center;
-        position: fixed;
-        /* background-color: rgb(20, 20, 20); */
-        width: 100%;
-        height: 68px;
-        padding-left: 55px;
-        box-sizing: border-box;
-        z-index: 100;
-        top: 0;
-        left: 0;
-        .nav-items {
-            padding: 0;
-            display: flex;
-            list-style: none;
-            column-gap: 18px;
-            .nav-item {
-                color: white;
-                font-size: 15px;
-                a {
-                    text-decoration: none;
-                    color: white;
-                }
-            }
-        }
-        .profile-items {
-            position: absolute;
-            right: 0;
-            margin-right: 60px;
-            display: flex;
-            align-items: center;
-            column-gap: 20px;
-            a {
-                text-decoration: none;
-                color: white;
-                font-size: 14px;
-            }
-            img:not(#perfil) {
-                width: 30px;
-                filter: invert(1);
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-            #lupa {
-                width: 25px !important;   
-            }
-            #perfil {
-                border-radius: 5px;    
-            }
-            .choose-profile{
-                #flecha {
-                    width: 10px !important;
-                    height: 15px !important;
-                    transform: rotateZ(90deg) scale(0.8);
-                    transition: transform 0.4s ease;
-                }
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                column-gap: 10px;
-                &:hover {
-                    cursor: pointer;
-                    #flecha {
-                        transform: rotateZ(270deg) scale(0.8);
-                    }
-                }
-            }
-        }
-    }
-    .movie-card {
-        position: absolute;
-        top: 19.8%;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        row-gap: 50px;
-        #movie-name {
-            width: 420px;
-            left: 3.5%;
-        }
-        .buttons-container{
-            display: flex;
-            column-gap: 15px;
-            .card-button {
-                height: 60px;
-                width: 230px;
-                border-radius: 5px;
-                border: none;
-                font-size: 23px;
-                font-weight: bold;
-                display: flex;
-                align-items: center;
-                justify-content: space-evenly;
-                img {
-                    width: 35px;
-                }
-                &:hover {
-                    cursor: pointer;
-                    filter: brightness(90%);
-                }
-            }
-            .info-button {
-                width: 300px;
-                color: white;
-                background-color: rgba(128, 128, 128, 0.623);
-                img {
-                    filter: invert(1);
-                }
-            }
-
-        }
-    }
-    .movies-container {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 40.2%;
-        row-gap: 43px;
+    align-items: center;
+    padding-top: 200px;
+    box-sizing: border-box;
+    #quien-esta-viendo {
         color: white;
-        .list-movies{
-            .list-title{
-                margin-left: 5px;
-                font-size: 25px;
-                margin-bottom: 15px;
+        font-size: 68px;
+        margin: 0;
+        font-weight: lighter;
+    }
+    .cada-perfil {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.1s ease;
+        #perfil-tarjeta {
+            width: 193px;
+            height: 193px;
+            border-radius: 5px;
+            border: none;
+            .redirect {
+                display: block;
+                width: 100%;
+                height: 100%;
             }
-            .movie-list {
-                padding: 0;
-                display: flex;
-                list-style: none;
-                column-gap: 8px;
-                margin: 0;
-                padding-left: 3px;
-                .movie-item {
-                    width: 289.5px;
-                    height: 167px;
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        object-position: top;
-                        border-radius: 5px;
-                    }
-                    &:nth-child(1) {
-                        width: 293.33px;
-                    }
-                }
+            &:hover {
+                cursor: pointer;
             }
+        }
+        .perfil1 {
+            background-image: url(./assets/perfil1.png);
+            background-size: 100%;
+        }
+        .perfil2 {
+            background-image: url(./assets/perfil2.png);
+            background-size: 100%;
+        }
+        .perfil3 {
+            background-image: url(./assets/perfil3.png);
+            background-size: 100%;
+        }
+        .perfil4 {
+            background-image: url(./assets/perfil4.png);
+            background-size: 100%;
+        }
+        .perfil-niños {
+            background-image: url(./assets/perfilNinos.png);
+            background-size: 100%;
+        }
+        h3 {
+            margin: 0;
+            color: grey;
+            font-weight: lighter;
+            font-size: 25px;
+            margin-top: 15px;
+            width: 100%;
+            text-align: center;
+        }
+        &:hover {
+            cursor: pointer;
+            h3 {
+                color: white;
+            }
+            #perfil-tarjeta {
+                outline: 5px solid white;
+            }
+        }
+    }
+    .contenedor-perfiles {
+        margin-top: 43px;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 38px;
+        row-gap: 20px;
+        justify-content: center;
+    }
+    .admin-perfiles {
+        width: 320px;
+        height: 55px;
+        margin-top: 125px;
+        font-size: 22px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        color: grey;
+        background-color: transparent;
+        border: none;
+        border: 1px solid grey;
+        transition: color 0.2s, border-color 0.2s;
+        &:hover {
+            cursor: pointer;
+            color: white;
+            border-color: white;
         }
     }
 }
